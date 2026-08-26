@@ -1,0 +1,18 @@
+{
+  "name": "PDF Toolkit Studio",
+  "short_name": "PDF Toolkit",
+  "description": "All-in-one private client-side browser PDF workstation. Merge, compress, sign, organize, convert, and OCR documents.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "./vite.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
