@@ -152,11 +152,8 @@ Developed with ❤️ by **Yash Dhanani**
 
 - 💼 **LinkedIn**: [https://www.linkedin.com/in/yashdhanani/](https://www.linkedin.com/in/yashdhanani/)
 - 🐙 **GitHub**: [@yashdhanani](https://github.com/yashdhanani)
-- ☕ **Support the Project**: If you find this toolkit helpful, consider buying me a coffee:
-  <br>
-  <a href="https://www.buymeacoffee.com/dhananiyash">
-    <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=dhananiyash&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" alt="Buy Me A Coffee" />
-  </a>
+- ☕ **Support the Project**:
+  [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-dhananiyash-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dhananiyash)
 
 ---
 
