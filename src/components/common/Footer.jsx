@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Heart, Sparkles, Coffee } from 'lucide-react';
+import { ShieldCheck, Heart, Sparkles, Coffee, Linkedin, Github } from 'lucide-react';
 
 /**
  * Modern Application Footer (Light & Dark Theme Ready)
@@ -18,26 +18,51 @@ export const Footer = () => {
                             </span>
                         </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400 max-w-md">
-                            All PDF conversions, compression, signatures, and edits are executed locally inside your browser sandbox.
+                            All PDF conversions, compression, signatures, and edits are executed locally inside your browser sandbox. 100% Private.
                         </p>
                     </div>
 
-                    {/* Developer Credits & Coffee */}
+                    {/* Developer Credits, LinkedIn & Coffee */}
                     <div className="flex flex-col items-center md:items-end gap-2.5 text-xs text-gray-500 dark:text-gray-400">
-                        <a
-                            href="https://www.buymeacoffee.com/dhananiyash"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFDD00] hover:bg-[#ffe433] text-gray-900 font-bold text-xs shadow-2xs hover:scale-102 transition-all"
-                        >
-                            <Coffee className="h-4 w-4 text-gray-900" />
-                            <span>Buy me a coffee</span>
-                        </a>
+                        <div className="flex items-center gap-2">
+                            <a
+                                href="https://www.linkedin.com/in/yashdhanani/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-50 dark:bg-blue-950/50 hover:bg-blue-100 dark:hover:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-bold text-xs border border-blue-200 dark:border-blue-800 transition-all hover:scale-102"
+                                title="Connect on LinkedIn"
+                            >
+                                <Linkedin className="h-3.5 w-3.5 fill-current" />
+                                <span>LinkedIn</span>
+                            </a>
+
+                            <a
+                                href="https://github.com/yashdhanani"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold text-xs border border-gray-200 dark:border-gray-700 transition-all hover:scale-102"
+                                title="Follow on GitHub"
+                            >
+                                <Github className="h-3.5 w-3.5" />
+                                <span>GitHub</span>
+                            </a>
+
+                            <a
+                                href="https://www.buymeacoffee.com/dhananiyash"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FFDD00] hover:bg-[#ffe433] text-gray-900 font-bold text-xs shadow-2xs hover:scale-102 transition-all"
+                                title="Buy me a coffee"
+                            >
+                                <Coffee className="h-3.5 w-3.5 text-gray-900" />
+                                <span>Buy me a coffee</span>
+                            </a>
+                        </div>
 
                         <div className="flex items-center gap-1 font-medium text-gray-700 dark:text-gray-300">
                             <span>Crafted with</span>
                             <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" />
-                            <span>by <strong className="text-gray-900 dark:text-white">Yash Dhanani</strong></span>
+                            <span>by <a href="https://www.linkedin.com/in/yashdhanani/" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 underline decoration-blue-400">Yash Dhanani</a></span>
                         </div>
                         <p className="text-[11px] text-gray-400 dark:text-gray-500">
                             &copy; {new Date().getFullYear()} PDF Toolkit • Free & Open Source

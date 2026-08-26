@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, FileText, Shield, Github, Sun, Moon, Coffee } from 'lucide-react';
+import { ArrowLeft, FileText, Shield, Github, Linkedin, Sun, Moon, Coffee } from 'lucide-react';
 
 /**
  * Top Application Header with Breadcrumb, Theme Switcher, and Cmd+K Search
@@ -41,10 +41,10 @@ export const Header = ({ activeTool, onBack, theme, onToggleTheme, onOpenCommand
                         </div>
                     </div>
 
-                    {/* Right: Privacy Pill + Dark Mode + Buy Me Coffee + Github */}
-                    <div className="flex items-center gap-3">
+                    {/* Right: Privacy Pill + Dark Mode + Buy Me Coffee + LinkedIn + Github */}
+                    <div className="flex items-center gap-2 sm:gap-3">
                         {/* Privacy Pill */}
-                        <div className="hidden md:flex items-center gap-1.5 h-9 px-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
+                        <div className="hidden lg:flex items-center gap-1.5 h-9 px-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
                             <Shield className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
                             <span>100% Client-Side Private</span>
                         </div>
@@ -69,11 +69,23 @@ export const Header = ({ activeTool, onBack, theme, onToggleTheme, onOpenCommand
                             href="https://www.buymeacoffee.com/dhananiyash"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="h-9 flex items-center gap-1.5 px-3.5 rounded-xl bg-[#FFDD00] hover:bg-[#ffe433] text-gray-900 text-xs font-bold transition-all hover:scale-102"
+                            className="h-9 flex items-center gap-1.5 px-3 sm:px-3.5 rounded-xl bg-[#FFDD00] hover:bg-[#ffe433] text-gray-900 text-xs font-bold transition-all hover:scale-102"
                             title="Support the developer"
                         >
                             <Coffee className="h-4 w-4 text-gray-900" />
                             <span className="hidden sm:inline">Buy me a coffee</span>
+                        </a>
+
+                        {/* LinkedIn Link */}
+                        <a
+                            href="https://www.linkedin.com/in/yashdhanani/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="h-9 flex items-center gap-1.5 px-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/60 text-blue-700 dark:text-blue-300 text-xs font-bold transition-all"
+                            title="LinkedIn Profile"
+                        >
+                            <Linkedin className="h-4 w-4 fill-current" />
+                            <span className="hidden md:inline">LinkedIn</span>
                         </a>
 
                         {/* GitHub Link */}
@@ -81,10 +93,11 @@ export const Header = ({ activeTool, onBack, theme, onToggleTheme, onOpenCommand
                             href="https://github.com/yashdhanani/pdf-toolkit-app"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="h-9 flex items-center gap-1.5 px-3.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 text-xs font-bold transition-all"
+                            className="h-9 flex items-center gap-1.5 px-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 text-xs font-bold transition-all"
+                            title="GitHub Repository"
                         >
                             <Github className="h-4 w-4" />
-                            <span className="hidden sm:inline">GitHub</span>
+                            <span className="hidden md:inline">GitHub</span>
                         </a>
                     </div>
                 </div>

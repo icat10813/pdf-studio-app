@@ -4,6 +4,9 @@
   <a href="https://yashdhanani.github.io/pdf-toolkit-app/">
     <img src="https://img.shields.io/badge/🚀%20Live%20Demo-GitHub%20Pages-blue?style=for-the-badge&logo=github" alt="Live Demo" />
   </a>
+  <a href="https://www.linkedin.com/in/yashdhanani/">
+    <img src="https://img.shields.io/badge/LinkedIn-Yash%20Dhanani-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Profile" />
+  </a>
   <a href="https://www.buymeacoffee.com/dhananiyash">
     <img src="https://img.shields.io/badge/☕%20Buy%20Me%20A%20Coffee-dhananiyash-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
   </a>
@@ -143,26 +146,11 @@ All processing occurs **100% locally inside your browser** using WebAssembly, We
 
 ---
 
-## 🚢 Deployment to GitHub Pages
-
-The repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) configured for zero-config automatic deployment:
-
-1. Push your code to the `main` branch:
-   ```bash
-   git add .
-   git commit -m "Deploy PDF Toolkit"
-   git push origin main
-   ```
-2. In your GitHub repository settings, navigate to **Settings > Pages** and ensure **Source** is set to **GitHub Actions**.
-3. Your application will be live at:
-   `https://yashdhanani.github.io/pdf-toolkit-app/`
-
----
-
 ## 👤 Author & Support
 
-Developed by **Yash Dhanani**
+Developed with ❤️ by **Yash Dhanani**
 
+- 💼 **LinkedIn**: [https://www.linkedin.com/in/yashdhanani/](https://www.linkedin.com/in/yashdhanani/)
 - 🐙 **GitHub**: [@yashdhanani](https://github.com/yashdhanani)
 - ☕ **Support the Project**: If you find this toolkit helpful, consider buying me a coffee:
   <br>
