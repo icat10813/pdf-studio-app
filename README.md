@@ -150,10 +150,9 @@ All processing occurs **100% locally inside your browser** using WebAssembly, We
 
 Developed with ❤️ by **Yash Dhanani**
 
-- 💼 **LinkedIn**: [https://www.linkedin.com/in/yashdhanani/](https://www.linkedin.com/in/yashdhanani/)
+- 💼 **LinkedIn**: [@yashdhanani](https://www.linkedin.com/in/yashdhanani/)
 - 🐙 **GitHub**: [@yashdhanani](https://github.com/yashdhanani)
-- ☕ **Support the Project**:
-  [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-dhananiyash-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dhananiyash)
+- ☕ **Support the Project**: [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-dhananiyash-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dhananiyash)
 
 ---
 
