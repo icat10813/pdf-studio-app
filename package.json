@@ -2,6 +2,7 @@
   "name": "pdf-toolkit",
   "private": true,
   "version": "0.0.0",
+  "license": "MIT",
   "type": "module",
   "homepage": "https://yashdhanani.github.io/pdf-toolkit-app/",
   "scripts": {
