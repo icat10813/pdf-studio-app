@@ -1,24 +1,47 @@
 import React from 'react';
+import { CheckCircle2, AlertCircle, Info, AlertTriangle, Loader2 } from 'lucide-react';
 
 /**
- * Reusable Alert/Message banner component
+ * Reusable Alert/Message banner component - GOJEK STYLE
  */
 export const MessageBox = ({ type, message }) => {
-    const baseClasses = "p-4 rounded-lg my-4 text-sm font-medium transition-all";
+    // Definisi gaya (tanpa border, background sangat soft, warna teks lebih solid)
+    const baseClasses = "flex items-start md:items-center gap-3 p-4 rounded-2xl my-4 text-[13px] md:text-sm font-bold transition-all duration-300 shadow-sm";
     
-    const typeClasses = {
-        error: "bg-red-100 border border-red-400 text-red-800",
-        success: "bg-green-100 border border-green-400 text-green-800",
-        info: "bg-blue-100 border border-blue-400 text-blue-800",
-        warning: "bg-amber-100 border border-amber-400 text-amber-800",
-        loading: "bg-yellow-100 border border-yellow-400 text-yellow-800 animate-pulse"
+    const typeConfig = {
+        error: {
+            classes: "bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400",
+            icon: <AlertCircle className="h-5 w-5 shrink-0 mt-0.5 md:mt-0" />
+        },
+        success: {
+            // Menggunakan warna Hijau Gojek untuk success
+            classes: "bg-[#E5F7E8] dark:bg-[#143B20] text-[#00AA13] dark:text-[#42E659]",
+            icon: <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5 md:mt-0" />
+        },
+        info: {
+            classes: "bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400",
+            icon: <Info className="h-5 w-5 shrink-0 mt-0.5 md:mt-0" />
+        },
+        warning: {
+            classes: "bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-500",
+            icon: <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5 md:mt-0" />
+        },
+        loading: {
+            classes: "bg-gray-100 dark:bg-[#2C2C2C] text-gray-700 dark:text-gray-300",
+            icon: <Loader2 className="h-5 w-5 shrink-0 mt-0.5 md:mt-0 animate-spin" />
+        }
     };
 
     if (!message) return null;
 
+    const currentConfig = typeConfig[type] || typeConfig.info;
+
     return (
-        <div className={`${baseClasses} ${typeClasses[type] || typeClasses.info}`} role="alert">
-            {message}
+        <div className={`${baseClasses} ${currentConfig.classes}`} role="alert">
+            {currentConfig.icon}
+            <div className="leading-relaxed leading-tight">
+                {message}
+            </div>
         </div>
     );
 };

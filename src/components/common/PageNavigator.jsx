@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 
 /**
- * Responsive & Overflow-Proof Page Navigator for Sidebars & Toolbars
+ * Page Navigator - GOJEK STYLE
  */
 export const PageNavigator = ({ 
     currentPage, 
@@ -18,8 +18,8 @@ export const PageNavigator = ({
 
     if (!totalPages || totalPages <= 1) {
         return (
-            <div className="text-xs text-gray-500 dark:text-gray-400 font-medium text-center py-1">
-                Page 1 of 1
+            <div className="text-xs text-gray-500 dark:text-gray-400 font-bold text-center py-2">
+                Halaman 1 dari 1
             </div>
         );
     }
@@ -49,23 +49,25 @@ export const PageNavigator = ({
     };
 
     return (
-        <div className="w-full flex flex-col gap-2 p-2.5 bg-white dark:bg-gray-800/90 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xs overflow-hidden box-border">
-            {/* Row 1: Prev, Direct Input, Next */}
-            <div className="flex items-center justify-between gap-1 w-full">
-                {/* Prev Button */}
+        <div className="w-full flex flex-col gap-3 p-3 bg-white dark:bg-[#1C1C1C] rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-black/20 overflow-hidden box-border">
+            
+            {/* Baris 1: Kontrol Halaman Utama */}
+            <div className="flex items-center justify-between gap-2 w-full px-1">
+                
+                {/* Tombol Sebelumnya (Bulat) */}
                 <button
                     type="button"
                     onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                     disabled={currentPage <= 1}
-                    className="h-8 px-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center justify-center shrink-0 cursor-pointer"
-                    title="Previous Page"
+                    className="h-10 w-10 bg-gray-100 dark:bg-[#2C2C2C] hover:bg-[#E5F7E8] dark:hover:bg-[#143B20] hover:text-[#00AA13] rounded-full text-gray-700 dark:text-gray-200 disabled:opacity-30 disabled:hover:bg-gray-100 disabled:hover:text-gray-700 transition-colors flex items-center justify-center shrink-0 cursor-pointer"
+                    title="Halaman Sebelumnya"
                 >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft className="h-5 w-5" />
                 </button>
 
-                {/* Direct Jump Box: [ 80 ] of 212 */}
-                <div className="flex items-center justify-center gap-1 text-xs font-semibold text-gray-700 dark:text-gray-300 min-w-0">
-                    <span className="text-[11px] text-gray-500">Page</span>
+                {/* Indikator Halaman (Pill Box) */}
+                <div className="flex items-center justify-center gap-2 px-4 py-1.5 bg-gray-50 dark:bg-[#252525] rounded-full">
+                    <span className="text-xs font-bold text-gray-500">Hal</span>
                     <input
                         type="number"
                         min={1}
@@ -74,55 +76,57 @@ export const PageNavigator = ({
                         onChange={handleInputChange}
                         onBlur={commitPageJump}
                         onKeyDown={handleKeyDown}
-                        className="w-12 h-7 px-1 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-md text-center font-bold text-gray-900 dark:text-white text-xs outline-none"
-                        title="Type page number and press Enter"
+                        className="w-10 h-7 bg-white dark:bg-[#1C1C1C] border border-gray-200 dark:border-[#3C3C3C] focus:border-[#00AA13] focus:ring-1 focus:ring-[#00AA13] rounded-md text-center font-bold text-gray-900 dark:text-white text-[13px] outline-none transition-all"
                     />
-                    <span className="text-[11px] text-gray-400 dark:text-gray-500 shrink-0">/ {totalPages}</span>
+                    <span className="text-xs font-bold text-gray-400">/ {totalPages}</span>
                 </div>
 
-                {/* Next Button */}
+                {/* Tombol Selanjutnya (Bulat) */}
                 <button
                     type="button"
                     onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage >= totalPages}
-                    className="h-8 px-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg text-xs font-bold text-gray-700 dark:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center justify-center shrink-0 cursor-pointer"
-                    title="Next Page"
+                    className="h-10 w-10 bg-gray-100 dark:bg-[#2C2C2C] hover:bg-[#E5F7E8] dark:hover:bg-[#143B20] hover:text-[#00AA13] rounded-full text-gray-700 dark:text-gray-200 disabled:opacity-30 disabled:hover:bg-gray-100 disabled:hover:text-gray-700 transition-colors flex items-center justify-center shrink-0 cursor-pointer"
+                    title="Halaman Selanjutnya"
                 >
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-5 w-5" />
                 </button>
             </div>
 
-            {/* Row 2: Quick First/Last + Scrubbing Slider */}
+            {/* Baris 2: Slider (Hanya muncul jika halaman lebih dari 2) */}
             {totalPages > 2 && (
-                <div className="flex items-center gap-2 pt-1 border-t border-gray-100 dark:border-gray-700/60 w-full">
+                <div className="flex items-center gap-3 pt-3 px-2 border-t border-gray-100 dark:border-[#2C2C2C] w-full">
+                    {/* Ke Awal */}
                     <button
                         type="button"
                         onClick={() => onPageChange(1)}
                         disabled={currentPage <= 1}
-                        className="p-1 rounded text-gray-500 hover:text-gray-900 dark:hover:text-white disabled:opacity-20 shrink-0"
-                        title="First Page"
+                        className="text-gray-400 hover:text-[#00AA13] disabled:opacity-20 shrink-0 transition-colors"
+                        title="Halaman Pertama"
                     >
-                        <ChevronsLeft className="h-3.5 w-3.5" />
+                        <ChevronsLeft className="h-4 w-4" />
                     </button>
 
+                    {/* Slider ala Gojek (Hijau) */}
                     <input
                         type="range"
                         min={1}
                         max={totalPages}
                         value={currentPage}
                         onChange={(e) => onPageChange(parseInt(e.target.value, 10))}
-                        className="w-full h-1 bg-gray-200 dark:bg-gray-700 rounded appearance-none cursor-pointer accent-blue-600"
-                        title={`Scrub page (${currentPage}/${totalPages})`}
+                        className="w-full h-1.5 bg-gray-200 dark:bg-[#3C3C3C] rounded-full appearance-none cursor-pointer accent-[#00AA13]"
+                        title={`Geser halaman (${currentPage}/${totalPages})`}
                     />
 
+                    {/* Ke Akhir */}
                     <button
                         type="button"
                         onClick={() => onPageChange(totalPages)}
                         disabled={currentPage >= totalPages}
-                        className="p-1 rounded text-gray-500 hover:text-gray-900 dark:hover:text-white disabled:opacity-20 shrink-0"
-                        title="Last Page"
+                        className="text-gray-400 hover:text-[#00AA13] disabled:opacity-20 shrink-0 transition-colors"
+                        title="Halaman Terakhir"
                     >
-                        <ChevronsRight className="h-3.5 w-3.5" />
+                        <ChevronsRight className="h-4 w-4" />
                     </button>
                 </div>
             )}

@@ -8,8 +8,28 @@ import CommandPalette from './components/common/CommandPalette.jsx';
 import { tools } from './config/tools.js';
 import { loadPdfLibraries } from './utils/scriptLoader.js';
 
+
+
+
+const handleToolSelect = (slug) => {
+    const tool = tools.find(t => t.slug === slug);
+    if (tool) {
+        setActiveTool(tool);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // ----- KODE PELACAKAN GOOGLE ADS -----
+        // Cek apakah script gtag dari index.html sudah dimuat
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'click_tool', {
+                'event_category': 'Engagement',
+                'event_label': tool.name, // Akan mengirim data nama alat (misal: "Merge PDF")
+            });
+        }
+        // -------------------------------------
+    }
+};
 /**
- * PDF Toolkit Root Application
+ * PDF Toolkit Root Application - GOJEK STYLE
  */
 const App = () => {
     const [activeTool, setActiveTool] = useState(null);
@@ -109,7 +129,9 @@ const App = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col bg-[#f8fafc] dark:bg-[#0f172a] font-sans text-gray-800 dark:text-gray-100 antialiased selection:bg-blue-600 selection:text-white transition-colors duration-200">
+        /* Latar Belakang Gojek (Abu-abu sangat muda/Hitam pekat), Warna sorotan teks (Hijau) */
+        <div className="min-h-screen flex flex-col bg-[#F9F9F9] dark:bg-[#121212] font-sans text-gray-900 dark:text-gray-100 antialiased selection:bg-[#00AA13]/30 selection:text-gray-900 dark:selection:text-white transition-colors duration-200">
+            
             {/* Global Spotlight Cmd+K Search Palette */}
             <CommandPalette
                 isOpen={isCommandPaletteOpen}
@@ -117,7 +139,7 @@ const App = () => {
                 onSelectTool={handleToolSelect}
             />
 
-            {/* SaaS Header */}
+            {/* Gojek Style Header */}
             <Header 
                 activeTool={activeTool} 
                 onBack={handleBack} 
@@ -130,7 +152,7 @@ const App = () => {
             <main className="flex-1 container mx-auto p-4 sm:p-6 lg:p-8 max-w-7xl">
                 {!activeTool ? (
                     <div>
-                        {/* Hero Section with Search & Category Pills */}
+                        {/* Hero Section */}
                         <Hero
                             searchQuery={searchQuery}
                             onSearchChange={setSearchQuery}
@@ -149,26 +171,33 @@ const App = () => {
                     </div>
                 ) : (
                     /* Active Tool Workspace */
-                    <div className="max-w-5xl mx-auto animate-in fade-in duration-200">
-                        {/* Tool Header Info */}
-                        <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center p-3.5 rounded-2xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-3 shadow-2xs">
-                                {React.createElement(activeTool.icon, { className: "h-7 w-7" })}
+                    <div className="max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-300">
+                        
+                        {/* Tool Header Info (Gojek Visual Style) */}
+                        <div className="flex flex-col items-center text-center mb-8 sm:mb-10 mt-4 sm:mt-6">
+                            
+                            {/* Ikon Bulat Besar (Gojek Icon Container) */}
+                            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#E5F7E8] dark:bg-[#143B20] text-[#00AA13] mb-4 shadow-sm">
+                                {React.createElement(activeTool.icon, { className: "h-10 w-10" })}
                             </div>
-                            <h2 className="text-3xl font-black text-gray-900 dark:text-white tracking-tight sm:text-4xl">
+                            
+                            {/* Judul Tebal */}
+                            <h2 className="text-3xl font-black text-gray-900 dark:text-white tracking-tight sm:text-4xl mb-3">
                                 {activeTool.name}
                             </h2>
-                            <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+                            
+                            {/* Deskripsi */}
+                            <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-lg mx-auto font-medium leading-relaxed">
                                 {activeTool.description}
                             </p>
                         </div>
 
-                        {/* Tool Canvas / Workspace */}
-                        <div className="bg-white dark:bg-gray-800/90 p-5 sm:p-8 rounded-3xl shadow-sm border border-gray-100/80 dark:border-gray-700/80 transition-colors duration-200">
+                        {/* Tool Canvas / Workspace (Gojek Clean Card) */}
+                        <div className="bg-white dark:bg-[#1C1C1C] p-5 sm:p-10 rounded-[32px] shadow-[0_4px_30px_rgba(0,0,0,0.04)] dark:shadow-black/30 transition-colors duration-200">
                             {libsReady ? (
                                 React.createElement(activeTool.component, { tool: activeTool })
                             ) : (
-                                <MessageBox type="loading" message="Initializing high-performance PDF processing engine..." />
+                                <MessageBox type="loading" message="Menyiapkan komponen PDF..." />
                             )}
                         </div>
                     </div>
