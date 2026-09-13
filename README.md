@@ -22,7 +22,7 @@
 
 All processing occurs **100% locally inside your browser** using WebAssembly, Web Workers, and modern Canvas/SVG engines. **Your sensitive documents never touch an external server.**
 
-🌐 **Live Web App**: [**https://yashdhanani.github.io/pdf-toolkit-app/**](https://yashdhanani.github.io/pdf-toolkit-app/)
+
 
 ---
 
@@ -145,14 +145,6 @@ All processing occurs **100% locally inside your browser** using WebAssembly, We
    ```
 
 ---
-
-## 👤 Author & Support
-
-Developed with ❤️ by **Yash Dhanani**
-
-- 💼 **LinkedIn**: [@yashdhanani](https://www.linkedin.com/in/yashdhanani/)
-- 🐙 **GitHub**: [@yashdhanani](https://github.com/yashdhanani)
-- ☕ **Support the Project**: [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-dhananiyash-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dhananiyash)
 
 ---
 
