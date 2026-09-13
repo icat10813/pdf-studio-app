@@ -3,8 +3,9 @@ import react from '@vitejs/plugin-react';
 import UnoCSS from 'unocss/vite';
 import { presetUno, presetAttributify, presetIcons } from 'unocss';
 
+
 export default defineConfig({
-  base: '/pdf-toolkit-app/',
+  base: '/',
   plugins: [
     react(),
     UnoCSS({
